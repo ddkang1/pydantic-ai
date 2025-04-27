@@ -59,6 +59,8 @@ function createServer(): McpServer {
 
   const toolDescription = `Tool to execute Python code and return stdout, stderr, and return value.
 
+This tool is strictly limited to running **Python code only**. It should be used **only when running the Python code and retrieving its result is absolutely critical** to your task.
+  
 The code may be async, and the value on the last line will be returned as the return value.
 
 The code will be executed with Python 3.12.
