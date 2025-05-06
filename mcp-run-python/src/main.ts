@@ -140,7 +140,7 @@ function runSse(port: number) {
       })
       await mcpServer.connect(transport)
     } else if (match('POST', '/messages')) {
-      const sessionId = url.searchParams.get('sessionId') ?? ''
+      const sessionId = url.searchParams.get('sessionId') ?? url.searchParams.get('session_id') ?? ''
       const transport = transports[sessionId]
       if (transport) {
         await transport.handlePostMessage(req, res)
